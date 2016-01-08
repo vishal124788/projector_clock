@@ -11,7 +11,7 @@
  */
 Int main(void)
 {
-	int i=0;
+	int i=0,j=0;
     System_printf("hello world.\n");
 
     return (0);
