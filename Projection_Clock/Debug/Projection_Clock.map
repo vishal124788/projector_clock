@@ -1,0 +1,770 @@
+******************************************************************************
+                  TI ARM Linker PC v5.2.6                      
+******************************************************************************
+>> Linked Mon Jan 11 10:04:09 2016
+
+OUTPUT FILE NAME:   <Projection_Clock.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 00001929
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00100000  00002c7e  000fd382  R  X
+  SRAM                  20000000   00040000  000025c0  0003da40  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00002a00   00002a00    r-x
+  00000000    00000000    00000008   00000008    r-- .bootVecs
+  00000008    00000008    000021ba   000021ba    r-x .text
+  000021c4    000021c4    0000083c   0000083c    r-- .const
+00002a00    00002a00    00000200   00000200    rw-
+  00002a00    00002a00    00000200   00000200    rw- .args
+00002c00    00002c00    00000080   00000080    r--
+  00002c00    00002c00    00000080   00000080    r-- .cinit
+20000000    20000000    000025c0   00000000    rw-
+  20000000    20000000    00001000   00000000    rw- .stack
+  20001000    20001000    00001000   00000000    rw- .sysmem
+  20002000    20002000    00000528   00000000    rw- .bss
+  20002528    20002528    00000098   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.bootVecs 
+*          0    00000000    00000008     
+                  00000000    00000008     boot.aem4f : boot.oem4f (.bootVecs)
+
+.text      0    00000008    000021ba     
+                  00000008    000003dc     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.text)
+                  000003e4    0000034c     ti.targets.arm.rtsarm.aem4f : System.oem4f (.text:xdc_runtime_System_doPrint__I)
+                  00000730    000002d4     rtsv7M4_T_le_v4SPD16_eabi.lib : trgdrv.obj (.text)
+                  00000a04    00000204     Boot.aem4f : Boot_sysctl.oem4f (.text:ti_catalog_arm_cortexm4_tiva_ce_Boot_sysCtlClockFreqSetI__I)
+                  00000c08    00000144     ti.targets.arm.rtsarm.aem4f : HeapStd.oem4f (.text:xdc_runtime_HeapStd_alloc__E)
+                  00000d4c    00000118                                 : Error.oem4f (.text:xdc_runtime_Error_policyDefault__E)
+                  00000e64    00000100                                 : Core-mem.oem4f (.text:xdc_runtime_Core_createObject__I)
+                  00000f64    000000f8                                 : Startup.oem4f (.text:xdc_runtime_Startup_startMods__I)
+                  0000105c    000000f8     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_System_printfExtend__I)
+                  00001154    000000cc     ti.targets.arm.rtsarm.aem4f : HeapStd.oem4f (.text:xdc_runtime_HeapStd_Instance_init__E)
+                  00001220    000000a8                                 : HeapStd.oem4f (.text:xdc_runtime_HeapStd_free__E)
+                  000012c8    000000a0     auto_init.aem4f : auto_init.oem4f (.text)
+                  00001368    000000a0     ti.targets.arm.rtsarm.aem4f : Text.oem4f (.text:xdc_runtime_Text_putMod__E)
+                  00001408    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.obj (.text)
+                  000014a4    0000009a     ti.targets.arm.rtsarm.aem4f : Text.oem4f (.text:xdc_runtime_Text_putSite__E)
+                  0000153e    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : i_div0.obj (.text)
+                  00001540    00000098     Boot.aem4f : Boot.oem4f (.text:ti_catalog_arm_cortexm4_tiva_ce_Boot_sysCtlClockFreqSet__E)
+                  000015d8    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.obj (.text)
+                  00001652    00000002     ti.targets.arm.rtsarm.aem4f : GateNull.oem4f (.text:xdc_runtime_GateNull_leave__E)
+                  00001654    0000006c                                 : Error.oem4f (.text:xdc_runtime_Error_print__E)
+                  000016c0    0000006c                                 : Memory.oem4f (.text:xdc_runtime_Memory_alloc__E)
+                  0000172c    0000006a     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text)
+                  00001796    00000002     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_Startup_reset__I)
+                  00001798    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : trgmsg.obj (.text)
+                  00001800    00000066     ti.targets.arm.rtsarm.aem4f : Core-mem.oem4f (.text:xdc_runtime_Core_deleteObject__I)
+                  00001866    00000002     --HOLE-- [fill = 0]
+                  00001868    00000064                                 : System.oem4f (.text:xdc_runtime_System_formatNum__I)
+                  000018cc    0000005b                                 : Text.oem4f (.text:xdc_runtime_Text_putLab__E)
+                  00001927    00000001     --HOLE-- [fill = 0]
+                  00001928    00000058     boot.aem4f : boot.oem4f (.text)
+                  00001980    00000058     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_HeapStd_Object__create__S)
+                  000019d8    00000054     ti.targets.arm.rtsarm.aem4f : Assert.oem4f (.text:xdc_runtime_Assert_raise__I)
+                  00001a2c    00000050     Boot.aem4f : Boot_sysctl.oem4f (.text:_SysCtlFrequencyGet)
+                  00001a7c    00000050     ti.targets.arm.rtsarm.aem4f : Startup.oem4f (.text:xdc_runtime_Startup_exec__E)
+                  00001acc    00000050                                 : Text.oem4f (.text:xdc_runtime_Text_visitRope2__I)
+                  00001b1c    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : cpy_tbl.obj (.text)
+                  00001b68    00000046     ti.targets.arm.rtsarm.aem4f : Core-params.oem4f (.text:xdc_runtime_Core_assignParams__I)
+                  00001bae    00000002     --HOLE-- [fill = 0]
+                  00001bb0    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.obj (.text)
+                  00001bf4    00000044     ti.targets.arm.rtsarm.aem4f : Error.oem4f (.text:xdc_runtime_Error_setX__E)
+                  00001c38    00000044                                 : SysMin.oem4f (.text:xdc_runtime_SysMin_flush__E)
+                  00001c7c    00000044                                 : Text.oem4f (.text:xdc_runtime_Text_xprintf__I)
+                  00001cc0    00000040     rtsv7M4_T_le_v4SPD16_eabi.lib : u_divt2.obj (.text)
+                  00001d00    00000038     ti.targets.arm.rtsarm.aem4f : SysMin.oem4f (.text:xdc_runtime_SysMin_putch__E)
+                  00001d38    00000034                                 : Core-label.oem4f (.text:xdc_runtime_Core_assignLabel__I)
+                  00001d6c    00000033                                 : Text.oem4f (.text:xdc_runtime_Text_printVisFxn__I)
+                  00001d9f    00000001     --HOLE-- [fill = 0]
+                  00001da0    00000030                                 : SysMin.oem4f (.text:xdc_runtime_SysMin_abort__E)
+                  00001dd0    00000030                                 : System.oem4f (.text:xdc_runtime_System_processAtExit__E)
+                  00001e00    0000002c                                 : Text.oem4f (.text:xdc_runtime_Text_cordText__E)
+                  00001e2c    0000002a                                 : System.oem4f (.text:xdc_runtime_System_putchar__I)
+                  00001e56    00000026                                 : System.oem4f (.text:xdc_runtime_System_avprintf__E)
+                  00001e7c    00000024                                 : System.oem4f (.text:xdc_runtime_System_vprintf__E)
+                  00001ea0    00000022     main.obj (.text)
+                  00001ec2    00000022     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_SysMin_output__I)
+                  00001ee4    00000020     Boot.aem4f : Boot_sysctl.oem4f (.text:_SysCtlMemTimingGet)
+                  00001f04    00000020     ti.targets.arm.rtsarm.aem4f : Registry.oem4f (.text:xdc_runtime_Registry_findById__E)
+                  00001f24    00000020                                 : SysMin.oem4f (.text:xdc_runtime_SysMin_Module_startup__E)
+                  00001f44    0000001c                                 : Error.oem4f (.text:xdc_runtime_Error_raiseX__E)
+                  00001f60    0000001c     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_HeapStd_Object__delete__S)
+                  00001f7c    0000001c     ti.targets.arm.rtsarm.aem4f : Memory.oem4f (.text:xdc_runtime_Memory_valloc__E)
+                  00001f98    0000001c                                 : SysMin.oem4f (.text:xdc_runtime_SysMin_exit__E)
+                  00001fb4    0000001c                                 : System.oem4f (.text:xdc_runtime_System_abort__E)
+                  00001fd0    0000001a     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_HeapStd_Handle__label__S)
+                  00001fea    0000001a     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_System_aprintf__E)
+                  00002004    0000001a     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_System_printf__E)
+                  0000201e    00000002     --HOLE-- [fill = 0]
+                  00002020    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : args_main.obj (.text)
+                  00002038    00000018     ti.targets.arm.rtsarm.aem4f : Error.oem4f (.text:xdc_runtime_Error_check__E)
+                  00002050    00000018                                 : System.oem4f (.text:xdc_runtime_System_exit__E)
+                  00002068    00000018                                 : Text.oem4f (.text:xdc_runtime_Text_ropeText__E)
+                  00002080    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : _lock.obj (.text)
+                  00002094    00000014                                   : strcpy.obj (.text)
+                  000020a8    00000014                                   : strlen.obj (.text)
+                  000020bc    00000010     Projection_Clock_pem4f.oem4f (.text:.bootCodeSection:ti_catalog_arm_cortexm4_tiva_ce_Boot_init__I)
+                  000020cc    00000010     ti.targets.arm.rtsarm.aem4f : Gate.oem4f (.text:xdc_runtime_Gate_leaveSystem__E)
+                  000020dc    00000010                                 : Memory.oem4f (.text:xdc_runtime_Memory_free__E)
+                  000020ec    00000010                                 : SysMin.oem4f (.text:xdc_runtime_SysMin_ready__E)
+                  000020fc    00000010                                 : System.oem4f (.text:xdc_runtime_System_vsnprintf__E)
+                  0000210c    00000010     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_Text_visitRope__I)
+                  0000211c    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.obj (.text:decompress:none)
+                  0000212a    0000000e     ti.targets.arm.rtsarm.aem4f : HeapStd.oem4f (.text:xdc_runtime_HeapStd_getStats__E)
+                  00002138    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.obj (.text:decompress:ZI)
+                  00002144    0000000c     ti.targets.arm.rtsarm.aem4f : Error.oem4f (.text:xdc_runtime_Error_init__E)
+                  00002150    0000000c                                 : Gate.oem4f (.text:xdc_runtime_Gate_enterSystem__E)
+                  0000215c    0000000c                                 : Memory.oem4f (.text:xdc_runtime_Memory_calloc__E)
+                  00002168    0000000c                                 : Memory.oem4f (.text:xdc_runtime_Memory_getMaxDefaultTypeAlign__E)
+                  00002174    0000000c     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_Startup_exec__I)
+                  00002180    0000000a     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_IHeap_alloc)
+                  0000218a    0000000a     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_IHeap_free)
+                  00002194    00000006     ti.targets.arm.rtsarm.aem4f : xdc_noinit.oem4f (.text:__xdc__init)
+                  0000219a    00000006     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_rle.obj (.text:decompress:rle24)
+                  000021a0    00000006     ti.targets.arm.rtsarm.aem4f : System.oem4f (.text:xdc_runtime_System_Module_startup__E)
+                  000021a6    00000004                                 : Error.oem4f (.text:xdc_runtime_Error_getSite__E)
+                  000021aa    00000004                                 : GateNull.oem4f (.text:xdc_runtime_GateNull_enter__E)
+                  000021ae    00000004                                 : HeapStd.oem4f (.text:xdc_runtime_HeapStd_isBlocking__E)
+                  000021b2    00000004     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_System_Module_GateProxy_enter__E)
+                  000021b6    00000004     Projection_Clock_pem4f.oem4f (.text:xdc_runtime_System_Module_GateProxy_leave__E)
+                  000021ba    00000004     ti.targets.arm.rtsarm.aem4f : System.oem4f (.text:xdc_runtime_System_aprintf_va__F)
+                  000021be    00000004                                 : System.oem4f (.text:xdc_runtime_System_printf_va__F)
+
+.const     0    000021c4    0000083c     
+                  000021c4    00000473     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Text_charTab__A)
+                  00002637    00000001     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Error_policy__C)
+                  00002638    00000120     Boot.aem4f : Boot_sysctl.oem4f (.const:g_pppui32XTALtoVCO)
+                  00002758    0000006c                : Boot_sysctl.oem4f (.const:g_pui32Xtals)
+                  000027c4    00000060     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Text_nodeTab__A)
+                  00002824    00000048     Projection_Clock_pem4f.oem4f (.const:.string)
+                  0000286c    00000030     Boot.aem4f : Boot_sysctl.oem4f (.const:g_sXTALtoMEMTIM)
+                  0000289c    00000028     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_HeapStd_Module__FXNS__C)
+                  000028c4    00000020     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_HeapStd_Object__DESC__C)
+                  000028e4    0000001c     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_HeapStd_Object__PARAMS__C)
+                  00002900    00000011     ti.targets.arm.rtsarm.aem4f : System.oem4f (.const:.string)
+                  00002911    00000001     --HOLE-- [fill = 0]
+                  00002912    00000002     Projection_Clock_pem4f.oem4f (.const:ti_catalog_arm_cortexm4_tiva_ce_Boot_Module__id__C)
+                  00002914    00000008     Boot.aem4f : Boot_sysctl.oem4f (.const)
+                  0000291c    00000008     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Startup_firstFxns__C)
+                  00002924    00000008     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Startup_lastFxns__C)
+                  0000292c    00000008     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Startup_sfxnTab__A)
+                  00002934    00000004     Projection_Clock_pem4f.oem4f (.const:ti_catalog_arm_cortexm4_tiva_ce_Boot_A_mustNotUseEnhancedClockMode__C)
+                  00002938    00000004     Projection_Clock_pem4f.oem4f (.const:ti_catalog_arm_cortexm4_tiva_ce_Boot_Module__diagsEnabled__C)
+                  0000293c    00000004     Projection_Clock_pem4f.oem4f (.const:ti_catalog_arm_cortexm4_tiva_ce_Boot_Module__diagsIncluded__C)
+                  00002940    00000004     Projection_Clock_pem4f.oem4f (.const:ti_catalog_arm_cortexm4_tiva_ce_Boot_Module__diagsMask__C)
+                  00002944    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Assert_E_assertFailed__C)
+                  00002948    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Core_A_initializedParams__C)
+                  0000294c    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Core_Module__diagsEnabled__C)
+                  00002950    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Core_Module__diagsIncluded__C)
+                  00002954    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Core_Module__diagsMask__C)
+                  00002958    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Error_E_memory__C)
+                  0000295c    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Error_Module__diagsEnabled__C)
+                  00002960    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Error_Module__diagsIncluded__C)
+                  00002964    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Error_Module__diagsMask__C)
+                  00002968    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Error_Module__loggerFxn8__C)
+                  0000296c    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Error_Module__loggerObj__C)
+                  00002970    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Error_policyFxn__C)
+                  00002974    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Error_raiseHook__C)
+                  00002978    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_HeapStd_A_align__C)
+                  0000297c    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_HeapStd_A_invalidTotalFreeSize__C)
+                  00002980    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_HeapStd_A_zeroSize__C)
+                  00002984    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_HeapStd_E_noRTSMemory__C)
+                  00002988    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_HeapStd_Module__diagsEnabled__C)
+                  0000298c    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_HeapStd_Module__diagsIncluded__C)
+                  00002990    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_HeapStd_Module__diagsMask__C)
+                  00002994    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_IHeap_Interface__BASE__C)
+                  00002998    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_IModule_Interface__BASE__C)
+                  0000299c    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Log_L_error__C)
+                  000029a0    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Memory_defaultHeapInstance__C)
+                  000029a4    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Startup_execImpl__C)
+                  000029a8    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Startup_firstFxns__A)
+                  000029ac    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Startup_maxPasses__C)
+                  000029b0    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Startup_sfxnRts__A)
+                  000029b4    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Startup_sfxnRts__C)
+                  000029b8    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Startup_sfxnTab__C)
+                  000029bc    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_SysMin_bufSize__C)
+                  000029c0    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_SysMin_outputFunc__C)
+                  000029c4    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_System_Module__gateObj__C)
+                  000029c8    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_System_abortFxn__C)
+                  000029cc    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_System_exitFxn__C)
+                  000029d0    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_System_extendFxn__C)
+                  000029d4    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Text_charTab__C)
+                  000029d8    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Text_nameEmpty__C)
+                  000029dc    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Text_nameStatic__C)
+                  000029e0    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Text_nameUnknown__C)
+                  000029e4    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Text_nodeTab__C)
+                  000029e8    00000004     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Text_visitRopeFxn__C)
+                  000029ec    00000002     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Core_Module__id__C)
+                  000029ee    00000002     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Error_Module__loggerDefined__C)
+                  000029f0    00000002     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Error_maxDepth__C)
+                  000029f2    00000002     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_HeapStd_Module__id__C)
+                  000029f4    00000002     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Memory_Module__id__C)
+                  000029f6    00000002     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_SysMin_flushAtExit__C)
+                  000029f8    00000002     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Text_charCnt__C)
+                  000029fa    00000002     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Text_isLoaded__C)
+                  000029fc    00000002     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Text_registryModsLastId__C)
+                  000029fe    00000002     Projection_Clock_pem4f.oem4f (.const:xdc_runtime_Text_unnamedModsLastId__C)
+
+.args      0    00002a00    00000200     
+                  00002a00    00000200     --HOLE-- [fill = 0]
+
+.cinit     0    00002c00    00000080     
+                  00002c00    0000005c     (.cinit..data.load) [load image, compression = rle]
+                  00002c5c    0000000c     (__TI_handler_table)
+                  00002c68    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00002c70    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.stack     0    20000000    00001000     UNINITIALIZED
+                  20000000    00001000     --HOLE--
+
+.sysmem    0    20001000    00001000     UNINITIALIZED
+                  20001000    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.sysmem)
+                  20001008    00000ff8     --HOLE--
+
+.bss       0    20002000    00000528     UNINITIALIZED
+                  20002000    00000400     Projection_Clock_pem4f.oem4f (.bss:xdc_runtime_SysMin_Module_State_0_outbuf__A)
+                  20002400    00000120     rtsv7M4_T_le_v4SPD16_eabi.lib : trgmsg.obj (.bss:__CIOBUF_)
+                  20002520    00000008     (.common:parmbuf)
+
+.TI.noinit 
+*          0    20002000    00000000     UNINITIALIZED
+
+.data      0    20002528    00000098     UNINITIALIZED
+                  20002528    00000078     Projection_Clock_pem4f.oem4f (.data)
+                  200025a0    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.obj (.data)
+                  200025ac    00000008                                   : _lock.obj (.data)
+                  200025b4    00000008                                   : exit.obj (.data)
+                  200025bc    00000004                                   : stkdepth_vars.obj (.data)
+
+xdc.meta   0    00000000    000000e8     COPY SECTION
+                  00000000    000000e8     Projection_Clock_pem4f.oem4f (xdc.meta)
+
+.TI.persistent 
+*          0    20002528    00000000     UNINITIALIZED
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00002c70 records: 2, size/record: 8, table size: 16
+	.data: load addr=00002c00, load size=0000005c bytes, run addr=20002528, run size=00000098 bytes, compression=rle
+	.bss: load addr=00002c68, load size=00000008 bytes, run addr=20002000, run size=00000528 bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00002c5c records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                                                 
+-------   ----                                                                 
+00001bb1  C$$EXIT                                                              
+000017c7  C$$IO$$                                                              
+000009bd  HOSTclock                                                            
+00000985  HOSTclose                                                            
+00000947  HOSTgetenv                                                           
+000008eb  HOSTlseek                                                            
+00000899  HOSTopen                                                             
+0000084d  HOSTread                                                             
+000007ef  HOSTrename                                                           
+000007b5  HOSTtime                                                             
+0000077d  HOSTunlink                                                           
+00000731  HOSTwrite                                                            
+UNDEFED   SHT$$INIT_ARRAY$$Base                                                
+UNDEFED   SHT$$INIT_ARRAY$$Limit                                               
+00000000  __ASM__                                                              
+20002400  __CIOBUF_                                                            
+00000066  __ISA__                                                              
+00000079  __PLAT__                                                             
+20001000  __STACK_END                                                          
+00001000  __STACK_SIZE                                                         
+20000200  __STACK_TOP                                                          
+00001000  __SYSMEM_SIZE                                                        
+0000009a  __TARG__                                                             
+00002c70  __TI_CINIT_Base                                                      
+00002c80  __TI_CINIT_Limit                                                     
+00002c5c  __TI_Handler_Table_Base                                              
+00002c68  __TI_Handler_Table_Limit                                             
+000012c9  __TI_auto_init                                                       
+200025b4  __TI_cleanup_ptr                                                     
+0000211d  __TI_decompress_none                                                 
+0000219b  __TI_decompress_rle24                                                
+200025b8  __TI_dtors_ptr                                                       
+000017cb  __TI_readmsg                                                         
+00002c00  __TI_static_base__                                                   
+00001799  __TI_writemsg                                                        
+00002139  __TI_zero_init                                                       
+000000c0  __TRDR__                                                             
+0000153f  __aeabi_idiv0                                                        
+000015d9  __aeabi_memclr                                                       
+000015d9  __aeabi_memclr4                                                      
+000015d9  __aeabi_memclr8                                                      
+00001409  __aeabi_memcpy                                                       
+00001409  __aeabi_memcpy4                                                      
+00001409  __aeabi_memcpy8                                                      
+000015db  __aeabi_memset                                                       
+000015db  __aeabi_memset4                                                      
+000015db  __aeabi_memset8                                                      
+00001cc1  __aeabi_uidiv                                                        
+00001cc1  __aeabi_uidivmod                                                     
+ffffffff  __binit__                                                            
+00002a00  __c_args__                                                           
+20000000  __stack                                                              
+00002195  __xdc__init                                                          
+2000259c  __xdc__init__addr                                                    
+00002021  _args_main                                                           
+00001929  _c_int00                                                             
+200025ac  _lock                                                                
+0000208f  _nop                                                                 
+00002087  _register_lock                                                       
+00002081  _register_unlock                                                     
+20001000  _sys_memory                                                          
+200025b0  _unlock                                                              
+00001bb5  abort                                                                
+ffffffff  binit                                                                
+000003b1  calloc                                                               
+00001b1d  copy_in                                                              
+00001bbd  exit                                                                 
+000000ff  free                                                                 
+00001ea1  main                                                                 
+200025bc  main_func_sp                                                         
+00000097  malloc                                                               
+000002cd  memalign                                                             
+00001409  memcpy                                                               
+000015e1  memset                                                               
+00000009  minit                                                                
+000001c1  realloc                                                              
+00002095  strcpy                                                               
+000020a9  strlen                                                               
+00002934  ti_catalog_arm_cortexm4_tiva_ce_Boot_A_mustNotUseEnhancedClockMode__C
+00002938  ti_catalog_arm_cortexm4_tiva_ce_Boot_Module__diagsEnabled__C         
+0000293c  ti_catalog_arm_cortexm4_tiva_ce_Boot_Module__diagsIncluded__C        
+00002940  ti_catalog_arm_cortexm4_tiva_ce_Boot_Module__diagsMask__C            
+00002912  ti_catalog_arm_cortexm4_tiva_ce_Boot_Module__id__C                   
+000020bd  ti_catalog_arm_cortexm4_tiva_ce_Boot_init__I                         
+00000a05  ti_catalog_arm_cortexm4_tiva_ce_Boot_sysCtlClockFreqSetI__I          
+00001541  ti_catalog_arm_cortexm4_tiva_ce_Boot_sysCtlClockFreqSet__E           
+00002944  xdc_runtime_Assert_E_assertFailed__C                                 
+000019d9  xdc_runtime_Assert_raise__I                                          
+00002948  xdc_runtime_Core_A_initializedParams__C                              
+0000294c  xdc_runtime_Core_Module__diagsEnabled__C                             
+00002950  xdc_runtime_Core_Module__diagsIncluded__C                            
+00002954  xdc_runtime_Core_Module__diagsMask__C                                
+000029ec  xdc_runtime_Core_Module__id__C                                       
+00001d39  xdc_runtime_Core_assignLabel__I                                      
+00001b69  xdc_runtime_Core_assignParams__I                                     
+00000e65  xdc_runtime_Core_createObject__I                                     
+00001801  xdc_runtime_Core_deleteObject__I                                     
+00002958  xdc_runtime_Error_E_memory__C                                        
+0000295c  xdc_runtime_Error_Module__diagsEnabled__C                            
+00002960  xdc_runtime_Error_Module__diagsIncluded__C                           
+00002964  xdc_runtime_Error_Module__diagsMask__C                               
+000029ee  xdc_runtime_Error_Module__loggerDefined__C                           
+00002968  xdc_runtime_Error_Module__loggerFxn8__C                              
+0000296c  xdc_runtime_Error_Module__loggerObj__C                               
+20002528  xdc_runtime_Error_Module__state__V                                   
+00002039  xdc_runtime_Error_check__E                                           
+000021a7  xdc_runtime_Error_getSite__E                                         
+00002145  xdc_runtime_Error_init__E                                            
+000029f0  xdc_runtime_Error_maxDepth__C                                        
+00000d4d  xdc_runtime_Error_policyDefault__E                                   
+00002970  xdc_runtime_Error_policyFxn__C                                       
+00002637  xdc_runtime_Error_policy__C                                          
+00001655  xdc_runtime_Error_print__E                                           
+00002974  xdc_runtime_Error_raiseHook__C                                       
+00001f45  xdc_runtime_Error_raiseX__E                                          
+00001bf5  xdc_runtime_Error_setX__E                                            
+2000252c  xdc_runtime_GateNull_Module__root__V                                 
+000021ab  xdc_runtime_GateNull_enter__E                                        
+00001653  xdc_runtime_GateNull_leave__E                                        
+00002151  xdc_runtime_Gate_enterSystem__E                                      
+000020cd  xdc_runtime_Gate_leaveSystem__E                                      
+00002978  xdc_runtime_HeapStd_A_align__C                                       
+0000297c  xdc_runtime_HeapStd_A_invalidTotalFreeSize__C                        
+00002980  xdc_runtime_HeapStd_A_zeroSize__C                                    
+00002984  xdc_runtime_HeapStd_E_noRTSMemory__C                                 
+00001fd1  xdc_runtime_HeapStd_Handle__label__S                                 
+00001155  xdc_runtime_HeapStd_Instance_init__E                                 
+0000289c  xdc_runtime_HeapStd_Module__FXNS__C                                  
+00002988  xdc_runtime_HeapStd_Module__diagsEnabled__C                          
+0000298c  xdc_runtime_HeapStd_Module__diagsIncluded__C                         
+00002990  xdc_runtime_HeapStd_Module__diagsMask__C                             
+000029f2  xdc_runtime_HeapStd_Module__id__C                                    
+20002534  xdc_runtime_HeapStd_Module__root__V                                  
+20002548  xdc_runtime_HeapStd_Module__state__V                                 
+000028c4  xdc_runtime_HeapStd_Object__DESC__C                                  
+000028e4  xdc_runtime_HeapStd_Object__PARAMS__C                                
+00001981  xdc_runtime_HeapStd_Object__create__S                                
+00001f61  xdc_runtime_HeapStd_Object__delete__S                                
+2000253c  xdc_runtime_HeapStd_Object__table__V                                 
+00000c09  xdc_runtime_HeapStd_alloc__E                                         
+00001221  xdc_runtime_HeapStd_free__E                                          
+0000212b  xdc_runtime_HeapStd_getStats__E                                      
+000021af  xdc_runtime_HeapStd_isBlocking__E                                    
+00002994  xdc_runtime_IHeap_Interface__BASE__C                                 
+00002998  xdc_runtime_IModule_Interface__BASE__C                               
+0000299c  xdc_runtime_Log_L_error__C                                           
+00001fd1  xdc_runtime_Memory_HeapProxy_Handle__label__S                        
+00001f61  xdc_runtime_Memory_HeapProxy_Object__delete__S                       
+00002181  xdc_runtime_Memory_HeapProxy_alloc__E                                
+0000218b  xdc_runtime_Memory_HeapProxy_free__E                                 
+000029f4  xdc_runtime_Memory_Module__id__C                                     
+2000254c  xdc_runtime_Memory_Module__state__V                                  
+000016c1  xdc_runtime_Memory_alloc__E                                          
+0000215d  xdc_runtime_Memory_calloc__E                                         
+000029a0  xdc_runtime_Memory_defaultHeapInstance__C                            
+000020dd  xdc_runtime_Memory_free__E                                           
+00002169  xdc_runtime_Memory_getMaxDefaultTypeAlign__E                         
+00001f7d  xdc_runtime_Memory_valloc__E                                         
+20002550  xdc_runtime_Registry_Module__state__V                                
+00001f05  xdc_runtime_Registry_findById__E                                     
+20002558  xdc_runtime_Startup_Module__state__V                                 
+00000001  xdc_runtime_Startup__EXECFXN__C                                      
+00000001  xdc_runtime_Startup__RESETFXN__C                                     
+000029a4  xdc_runtime_Startup_execImpl__C                                      
+00001a7d  xdc_runtime_Startup_exec__E                                          
+00002175  xdc_runtime_Startup_exec__I                                          
+000029a8  xdc_runtime_Startup_firstFxns__A                                     
+0000291c  xdc_runtime_Startup_firstFxns__C                                     
+00002924  xdc_runtime_Startup_lastFxns__C                                      
+000029ac  xdc_runtime_Startup_maxPasses__C                                     
+00001797  xdc_runtime_Startup_reset__I                                         
+000029b0  xdc_runtime_Startup_sfxnRts__A                                       
+000029b4  xdc_runtime_Startup_sfxnRts__C                                       
+0000292c  xdc_runtime_Startup_sfxnTab__A                                       
+000029b8  xdc_runtime_Startup_sfxnTab__C                                       
+00000f65  xdc_runtime_Startup_startMods__I                                     
+20002000  xdc_runtime_SysMin_Module_State_0_outbuf__A                          
+20002560  xdc_runtime_SysMin_Module__state__V                                  
+00001f25  xdc_runtime_SysMin_Module_startup__E                                 
+00001da1  xdc_runtime_SysMin_abort__E                                          
+000029bc  xdc_runtime_SysMin_bufSize__C                                        
+00001f99  xdc_runtime_SysMin_exit__E                                           
+000029f6  xdc_runtime_SysMin_flushAtExit__C                                    
+00001c39  xdc_runtime_SysMin_flush__E                                          
+000029c0  xdc_runtime_SysMin_outputFunc__C                                     
+00001ec3  xdc_runtime_SysMin_output__I                                         
+00001d01  xdc_runtime_SysMin_putch__E                                          
+000020ed  xdc_runtime_SysMin_ready__E                                          
+000021b3  xdc_runtime_System_Module_GateProxy_enter__E                         
+000021b7  xdc_runtime_System_Module_GateProxy_leave__E                         
+2000256c  xdc_runtime_System_Module_State_0_atexitHandlers__A                  
+000029c4  xdc_runtime_System_Module__gateObj__C                                
+2000258c  xdc_runtime_System_Module__state__V                                  
+000021a1  xdc_runtime_System_Module_startup__E                                 
+00001da1  xdc_runtime_System_SupportProxy_abort__E                             
+00001f99  xdc_runtime_System_SupportProxy_exit__E                              
+00001c39  xdc_runtime_System_SupportProxy_flush__E                             
+00001d01  xdc_runtime_System_SupportProxy_putch__E                             
+000020ed  xdc_runtime_System_SupportProxy_ready__E                             
+000029c8  xdc_runtime_System_abortFxn__C                                       
+00001bb5  xdc_runtime_System_abortStd__E                                       
+00001fb5  xdc_runtime_System_abort__E                                          
+00001feb  xdc_runtime_System_aprintf__E                                        
+000021bb  xdc_runtime_System_aprintf_va__F                                     
+00001e57  xdc_runtime_System_avprintf__E                                       
+000003e5  xdc_runtime_System_doPrint__I                                        
+000029cc  xdc_runtime_System_exitFxn__C                                        
+00001bbd  xdc_runtime_System_exitStd__E                                        
+00002051  xdc_runtime_System_exit__E                                           
+000029d0  xdc_runtime_System_extendFxn__C                                      
+00001869  xdc_runtime_System_formatNum__I                                      
+0000105d  xdc_runtime_System_printfExtend__I                                   
+00002005  xdc_runtime_System_printf__E                                         
+000021bf  xdc_runtime_System_printf_va__F                                      
+00001dd1  xdc_runtime_System_processAtExit__E                                  
+00001e2d  xdc_runtime_System_putchar__I                                        
+00001e7d  xdc_runtime_System_vprintf__E                                        
+000020fd  xdc_runtime_System_vsnprintf__E                                      
+20002594  xdc_runtime_Text_Module__state__V                                    
+000029f8  xdc_runtime_Text_charCnt__C                                          
+000021c4  xdc_runtime_Text_charTab__A                                          
+000029d4  xdc_runtime_Text_charTab__C                                          
+00001e01  xdc_runtime_Text_cordText__E                                         
+000029fa  xdc_runtime_Text_isLoaded__C                                         
+000029d8  xdc_runtime_Text_nameEmpty__C                                        
+000029dc  xdc_runtime_Text_nameStatic__C                                       
+000029e0  xdc_runtime_Text_nameUnknown__C                                      
+000027c4  xdc_runtime_Text_nodeTab__A                                          
+000029e4  xdc_runtime_Text_nodeTab__C                                          
+00001d6d  xdc_runtime_Text_printVisFxn__I                                      
+000018cd  xdc_runtime_Text_putLab__E                                           
+00001369  xdc_runtime_Text_putMod__E                                           
+000014a5  xdc_runtime_Text_putSite__E                                          
+000029fc  xdc_runtime_Text_registryModsLastId__C                               
+00002069  xdc_runtime_Text_ropeText__E                                         
+000029fe  xdc_runtime_Text_unnamedModsLastId__C                                
+00001acd  xdc_runtime_Text_visitRope2__I                                       
+000029e8  xdc_runtime_Text_visitRopeFxn__C                                     
+0000210d  xdc_runtime_Text_visitRope__I                                        
+00001c7d  xdc_runtime_Text_xprintf__I                                          
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                                                 
+-------   ----                                                                 
+00000000  __ASM__                                                              
+00000001  xdc_runtime_Startup__EXECFXN__C                                      
+00000001  xdc_runtime_Startup__RESETFXN__C                                     
+00000009  minit                                                                
+00000066  __ISA__                                                              
+00000079  __PLAT__                                                             
+00000097  malloc                                                               
+0000009a  __TARG__                                                             
+000000c0  __TRDR__                                                             
+000000ff  free                                                                 
+000001c1  realloc                                                              
+000002cd  memalign                                                             
+000003b1  calloc                                                               
+000003e5  xdc_runtime_System_doPrint__I                                        
+00000731  HOSTwrite                                                            
+0000077d  HOSTunlink                                                           
+000007b5  HOSTtime                                                             
+000007ef  HOSTrename                                                           
+0000084d  HOSTread                                                             
+00000899  HOSTopen                                                             
+000008eb  HOSTlseek                                                            
+00000947  HOSTgetenv                                                           
+00000985  HOSTclose                                                            
+000009bd  HOSTclock                                                            
+00000a05  ti_catalog_arm_cortexm4_tiva_ce_Boot_sysCtlClockFreqSetI__I          
+00000c09  xdc_runtime_HeapStd_alloc__E                                         
+00000d4d  xdc_runtime_Error_policyDefault__E                                   
+00000e65  xdc_runtime_Core_createObject__I                                     
+00000f65  xdc_runtime_Startup_startMods__I                                     
+00001000  __STACK_SIZE                                                         
+00001000  __SYSMEM_SIZE                                                        
+0000105d  xdc_runtime_System_printfExtend__I                                   
+00001155  xdc_runtime_HeapStd_Instance_init__E                                 
+00001221  xdc_runtime_HeapStd_free__E                                          
+000012c9  __TI_auto_init                                                       
+00001369  xdc_runtime_Text_putMod__E                                           
+00001409  __aeabi_memcpy                                                       
+00001409  __aeabi_memcpy4                                                      
+00001409  __aeabi_memcpy8                                                      
+00001409  memcpy                                                               
+000014a5  xdc_runtime_Text_putSite__E                                          
+0000153f  __aeabi_idiv0                                                        
+00001541  ti_catalog_arm_cortexm4_tiva_ce_Boot_sysCtlClockFreqSet__E           
+000015d9  __aeabi_memclr                                                       
+000015d9  __aeabi_memclr4                                                      
+000015d9  __aeabi_memclr8                                                      
+000015db  __aeabi_memset                                                       
+000015db  __aeabi_memset4                                                      
+000015db  __aeabi_memset8                                                      
+000015e1  memset                                                               
+00001653  xdc_runtime_GateNull_leave__E                                        
+00001655  xdc_runtime_Error_print__E                                           
+000016c1  xdc_runtime_Memory_alloc__E                                          
+00001797  xdc_runtime_Startup_reset__I                                         
+00001799  __TI_writemsg                                                        
+000017c7  C$$IO$$                                                              
+000017cb  __TI_readmsg                                                         
+00001801  xdc_runtime_Core_deleteObject__I                                     
+00001869  xdc_runtime_System_formatNum__I                                      
+000018cd  xdc_runtime_Text_putLab__E                                           
+00001929  _c_int00                                                             
+00001981  xdc_runtime_HeapStd_Object__create__S                                
+000019d9  xdc_runtime_Assert_raise__I                                          
+00001a7d  xdc_runtime_Startup_exec__E                                          
+00001acd  xdc_runtime_Text_visitRope2__I                                       
+00001b1d  copy_in                                                              
+00001b69  xdc_runtime_Core_assignParams__I                                     
+00001bb1  C$$EXIT                                                              
+00001bb5  abort                                                                
+00001bb5  xdc_runtime_System_abortStd__E                                       
+00001bbd  exit                                                                 
+00001bbd  xdc_runtime_System_exitStd__E                                        
+00001bf5  xdc_runtime_Error_setX__E                                            
+00001c39  xdc_runtime_SysMin_flush__E                                          
+00001c39  xdc_runtime_System_SupportProxy_flush__E                             
+00001c7d  xdc_runtime_Text_xprintf__I                                          
+00001cc1  __aeabi_uidiv                                                        
+00001cc1  __aeabi_uidivmod                                                     
+00001d01  xdc_runtime_SysMin_putch__E                                          
+00001d01  xdc_runtime_System_SupportProxy_putch__E                             
+00001d39  xdc_runtime_Core_assignLabel__I                                      
+00001d6d  xdc_runtime_Text_printVisFxn__I                                      
+00001da1  xdc_runtime_SysMin_abort__E                                          
+00001da1  xdc_runtime_System_SupportProxy_abort__E                             
+00001dd1  xdc_runtime_System_processAtExit__E                                  
+00001e01  xdc_runtime_Text_cordText__E                                         
+00001e2d  xdc_runtime_System_putchar__I                                        
+00001e57  xdc_runtime_System_avprintf__E                                       
+00001e7d  xdc_runtime_System_vprintf__E                                        
+00001ea1  main                                                                 
+00001ec3  xdc_runtime_SysMin_output__I                                         
+00001f05  xdc_runtime_Registry_findById__E                                     
+00001f25  xdc_runtime_SysMin_Module_startup__E                                 
+00001f45  xdc_runtime_Error_raiseX__E                                          
+00001f61  xdc_runtime_HeapStd_Object__delete__S                                
+00001f61  xdc_runtime_Memory_HeapProxy_Object__delete__S                       
+00001f7d  xdc_runtime_Memory_valloc__E                                         
+00001f99  xdc_runtime_SysMin_exit__E                                           
+00001f99  xdc_runtime_System_SupportProxy_exit__E                              
+00001fb5  xdc_runtime_System_abort__E                                          
+00001fd1  xdc_runtime_HeapStd_Handle__label__S                                 
+00001fd1  xdc_runtime_Memory_HeapProxy_Handle__label__S                        
+00001feb  xdc_runtime_System_aprintf__E                                        
+00002005  xdc_runtime_System_printf__E                                         
+00002021  _args_main                                                           
+00002039  xdc_runtime_Error_check__E                                           
+00002051  xdc_runtime_System_exit__E                                           
+00002069  xdc_runtime_Text_ropeText__E                                         
+00002081  _register_unlock                                                     
+00002087  _register_lock                                                       
+0000208f  _nop                                                                 
+00002095  strcpy                                                               
+000020a9  strlen                                                               
+000020bd  ti_catalog_arm_cortexm4_tiva_ce_Boot_init__I                         
+000020cd  xdc_runtime_Gate_leaveSystem__E                                      
+000020dd  xdc_runtime_Memory_free__E                                           
+000020ed  xdc_runtime_SysMin_ready__E                                          
+000020ed  xdc_runtime_System_SupportProxy_ready__E                             
+000020fd  xdc_runtime_System_vsnprintf__E                                      
+0000210d  xdc_runtime_Text_visitRope__I                                        
+0000211d  __TI_decompress_none                                                 
+0000212b  xdc_runtime_HeapStd_getStats__E                                      
+00002139  __TI_zero_init                                                       
+00002145  xdc_runtime_Error_init__E                                            
+00002151  xdc_runtime_Gate_enterSystem__E                                      
+0000215d  xdc_runtime_Memory_calloc__E                                         
+00002169  xdc_runtime_Memory_getMaxDefaultTypeAlign__E                         
+00002175  xdc_runtime_Startup_exec__I                                          
+00002181  xdc_runtime_Memory_HeapProxy_alloc__E                                
+0000218b  xdc_runtime_Memory_HeapProxy_free__E                                 
+00002195  __xdc__init                                                          
+0000219b  __TI_decompress_rle24                                                
+000021a1  xdc_runtime_System_Module_startup__E                                 
+000021a7  xdc_runtime_Error_getSite__E                                         
+000021ab  xdc_runtime_GateNull_enter__E                                        
+000021af  xdc_runtime_HeapStd_isBlocking__E                                    
+000021b3  xdc_runtime_System_Module_GateProxy_enter__E                         
+000021b7  xdc_runtime_System_Module_GateProxy_leave__E                         
+000021bb  xdc_runtime_System_aprintf_va__F                                     
+000021bf  xdc_runtime_System_printf_va__F                                      
+000021c4  xdc_runtime_Text_charTab__A                                          
+00002637  xdc_runtime_Error_policy__C                                          
+000027c4  xdc_runtime_Text_nodeTab__A                                          
+0000289c  xdc_runtime_HeapStd_Module__FXNS__C                                  
+000028c4  xdc_runtime_HeapStd_Object__DESC__C                                  
+000028e4  xdc_runtime_HeapStd_Object__PARAMS__C                                
+00002912  ti_catalog_arm_cortexm4_tiva_ce_Boot_Module__id__C                   
+0000291c  xdc_runtime_Startup_firstFxns__C                                     
+00002924  xdc_runtime_Startup_lastFxns__C                                      
+0000292c  xdc_runtime_Startup_sfxnTab__A                                       
+00002934  ti_catalog_arm_cortexm4_tiva_ce_Boot_A_mustNotUseEnhancedClockMode__C
+00002938  ti_catalog_arm_cortexm4_tiva_ce_Boot_Module__diagsEnabled__C         
+0000293c  ti_catalog_arm_cortexm4_tiva_ce_Boot_Module__diagsIncluded__C        
+00002940  ti_catalog_arm_cortexm4_tiva_ce_Boot_Module__diagsMask__C            
+00002944  xdc_runtime_Assert_E_assertFailed__C                                 
+00002948  xdc_runtime_Core_A_initializedParams__C                              
+0000294c  xdc_runtime_Core_Module__diagsEnabled__C                             
+00002950  xdc_runtime_Core_Module__diagsIncluded__C                            
+00002954  xdc_runtime_Core_Module__diagsMask__C                                
+00002958  xdc_runtime_Error_E_memory__C                                        
+0000295c  xdc_runtime_Error_Module__diagsEnabled__C                            
+00002960  xdc_runtime_Error_Module__diagsIncluded__C                           
+00002964  xdc_runtime_Error_Module__diagsMask__C                               
+00002968  xdc_runtime_Error_Module__loggerFxn8__C                              
+0000296c  xdc_runtime_Error_Module__loggerObj__C                               
+00002970  xdc_runtime_Error_policyFxn__C                                       
+00002974  xdc_runtime_Error_raiseHook__C                                       
+00002978  xdc_runtime_HeapStd_A_align__C                                       
+0000297c  xdc_runtime_HeapStd_A_invalidTotalFreeSize__C                        
+00002980  xdc_runtime_HeapStd_A_zeroSize__C                                    
+00002984  xdc_runtime_HeapStd_E_noRTSMemory__C                                 
+00002988  xdc_runtime_HeapStd_Module__diagsEnabled__C                          
+0000298c  xdc_runtime_HeapStd_Module__diagsIncluded__C                         
+00002990  xdc_runtime_HeapStd_Module__diagsMask__C                             
+00002994  xdc_runtime_IHeap_Interface__BASE__C                                 
+00002998  xdc_runtime_IModule_Interface__BASE__C                               
+0000299c  xdc_runtime_Log_L_error__C                                           
+000029a0  xdc_runtime_Memory_defaultHeapInstance__C                            
+000029a4  xdc_runtime_Startup_execImpl__C                                      
+000029a8  xdc_runtime_Startup_firstFxns__A                                     
+000029ac  xdc_runtime_Startup_maxPasses__C                                     
+000029b0  xdc_runtime_Startup_sfxnRts__A                                       
+000029b4  xdc_runtime_Startup_sfxnRts__C                                       
+000029b8  xdc_runtime_Startup_sfxnTab__C                                       
+000029bc  xdc_runtime_SysMin_bufSize__C                                        
+000029c0  xdc_runtime_SysMin_outputFunc__C                                     
+000029c4  xdc_runtime_System_Module__gateObj__C                                
+000029c8  xdc_runtime_System_abortFxn__C                                       
+000029cc  xdc_runtime_System_exitFxn__C                                        
+000029d0  xdc_runtime_System_extendFxn__C                                      
+000029d4  xdc_runtime_Text_charTab__C                                          
+000029d8  xdc_runtime_Text_nameEmpty__C                                        
+000029dc  xdc_runtime_Text_nameStatic__C                                       
+000029e0  xdc_runtime_Text_nameUnknown__C                                      
+000029e4  xdc_runtime_Text_nodeTab__C                                          
+000029e8  xdc_runtime_Text_visitRopeFxn__C                                     
+000029ec  xdc_runtime_Core_Module__id__C                                       
+000029ee  xdc_runtime_Error_Module__loggerDefined__C                           
+000029f0  xdc_runtime_Error_maxDepth__C                                        
+000029f2  xdc_runtime_HeapStd_Module__id__C                                    
+000029f4  xdc_runtime_Memory_Module__id__C                                     
+000029f6  xdc_runtime_SysMin_flushAtExit__C                                    
+000029f8  xdc_runtime_Text_charCnt__C                                          
+000029fa  xdc_runtime_Text_isLoaded__C                                         
+000029fc  xdc_runtime_Text_registryModsLastId__C                               
+000029fe  xdc_runtime_Text_unnamedModsLastId__C                                
+00002a00  __c_args__                                                           
+00002c00  __TI_static_base__                                                   
+00002c5c  __TI_Handler_Table_Base                                              
+00002c68  __TI_Handler_Table_Limit                                             
+00002c70  __TI_CINIT_Base                                                      
+00002c80  __TI_CINIT_Limit                                                     
+20000000  __stack                                                              
+20000200  __STACK_TOP                                                          
+20001000  __STACK_END                                                          
+20001000  _sys_memory                                                          
+20002000  xdc_runtime_SysMin_Module_State_0_outbuf__A                          
+20002400  __CIOBUF_                                                            
+20002528  xdc_runtime_Error_Module__state__V                                   
+2000252c  xdc_runtime_GateNull_Module__root__V                                 
+20002534  xdc_runtime_HeapStd_Module__root__V                                  
+2000253c  xdc_runtime_HeapStd_Object__table__V                                 
+20002548  xdc_runtime_HeapStd_Module__state__V                                 
+2000254c  xdc_runtime_Memory_Module__state__V                                  
+20002550  xdc_runtime_Registry_Module__state__V                                
+20002558  xdc_runtime_Startup_Module__state__V                                 
+20002560  xdc_runtime_SysMin_Module__state__V                                  
+2000256c  xdc_runtime_System_Module_State_0_atexitHandlers__A                  
+2000258c  xdc_runtime_System_Module__state__V                                  
+20002594  xdc_runtime_Text_Module__state__V                                    
+2000259c  __xdc__init__addr                                                    
+200025ac  _lock                                                                
+200025b0  _unlock                                                              
+200025b4  __TI_cleanup_ptr                                                     
+200025b8  __TI_dtors_ptr                                                       
+200025bc  main_func_sp                                                         
+ffffffff  __binit__                                                            
+ffffffff  binit                                                                
+UNDEFED   SHT$$INIT_ARRAY$$Base                                                
+UNDEFED   SHT$$INIT_ARRAY$$Limit                                               
+
+[240 symbols]

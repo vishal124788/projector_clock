@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configurations XML_version="1.2" id="configurations_0">
-    <configuration XML_version="1.2" id="configuration_0">
-        <instance XML_version="1.2" desc="Texas Instruments XDS560 Debug Probe, 2-Pin cJTAG with External Converter" href="connections/TIXDS560_Rev_BD_Dot7_Connection.xml" id="Texas Instruments XDS560 Debug Probe, 2-Pin cJTAG with External Converter" xml="TIXDS560_Rev_BD_Dot7_Connection.xml" xmlpath="connections"/>
-        <connection XML_version="1.2" id="Texas Instruments XDS560 Debug Probe, 2-Pin cJTAG with External Converter">
-            <instance XML_version="1.2" href="drivers/tixds560cs_dap.xml" id="drivers" xml="tixds560cs_dap.xml" xmlpath="drivers"/>
-            <instance XML_version="1.2" href="drivers/tixds560cortexM.xml" id="drivers" xml="tixds560cortexM.xml" xmlpath="drivers"/>
+<configuration XML_version="1.2" id="Segger J-Link Emulator_0">
+        <instance XML_version="1.2" desc="Segger J-Link Emulator_0" href="connections/segger_j-link_connection.xml" id="Segger J-Link Emulator_0" xml="segger_j-link_connection.xml" xmlpath="connections"/>
+        <connection XML_version="1.2" id="Segger J-Link Emulator_0">
+            <instance XML_version="1.2" href="drivers/jlinkcs_dap.xml" id="drivers" xml="jlinkcs_dap.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/jlinkcortexm4.xml" id="drivers" xml="jlinkcortexm4.xml" xmlpath="drivers"/>
             <platform XML_version="1.2" id="platform_0">
-                <instance XML_version="1.2" desc="Tiva TM4C129LNCZAD" href="devices/tm4c129lnczad.xml" id="Tiva TM4C129LNCZAD" xml="tm4c129lnczad.xml" xmlpath="devices"/>
+                <instance XML_version="1.2" desc="Tiva TM4C129LNCZAD_0" href="devices/tm4c129lnczad.xml" id="Tiva TM4C129LNCZAD_0" xml="tm4c129lnczad.xml" xmlpath="devices"/>
             </platform>
         </connection>
     </configuration>

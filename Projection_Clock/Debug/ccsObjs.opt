@@ -1,0 +1,1 @@
+"./main.obj" "../tm4c129lnczad.cmd" -l"configPkg/linker.cmd" -l"libc.a" 

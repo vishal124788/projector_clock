@@ -6,8 +6,9 @@
 	<deviceEndianness value="little"/>
 	<codegenToolVersion value="5.2.6"/>
 	<isElfFormat value="true"/>
-	<connection value="common/targetdb/connections/TIXDS560_Rev_BD_Dot7_Connection.xml"/>
+	<connection value="common/targetdb/connections/segger_j-link_connection.xml"/>
 	<rts value="libc.a"/>
 	<createSlaveProjects value=""/>
 	<templateProperties value="id=org.eclipse.rtsc.project.templates.EmptyRtscApplication,buildProfile=release,isHybrid=true,"/>
+	<isTargetManual value="false"/>
 </projectOptions>
